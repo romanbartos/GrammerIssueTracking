@@ -1,4 +1,4 @@
-﻿namespace GrammerIssueTracking.Models.Enums
+﻿namespace Grammer.IssueTracking.WinForms.Models.Enums
 {
     /// <summary>
     /// Object State Enumeration

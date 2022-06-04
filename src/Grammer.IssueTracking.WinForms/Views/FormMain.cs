@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GrammerIssueTracking.Repositories;
+using Grammer.IssueTracking.WinForms.Repositories;
 
-namespace GrammerIssueTracking.Views
+namespace Grammer.IssueTracking.WinForms.Views
 {
     public partial class FormMain : Form
     {

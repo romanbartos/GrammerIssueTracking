@@ -1,7 +1,4 @@
-﻿using GrammerIssueTracking.Interfaces;
-using GrammerIssueTracking.Models;
-using GrammerIssueTracking.Utilities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
@@ -9,8 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grammer.IssueTracking.WinForms.Interfaces;
+using Grammer.IssueTracking.WinForms.Models;
+using Grammer.IssueTracking.WinForms.Utilities;
 
-namespace GrammerIssueTracking.Repositories
+namespace Grammer.IssueTracking.WinForms.Repositories
 {
     public class KnihaRepository : IGenericRepository<Kniha>
     {

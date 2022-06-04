@@ -1,13 +1,13 @@
-﻿using GrammerIssueTracking.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grammer.IssueTracking.WinForms.Models;
 
-namespace GrammerIssueTracking.Mappers
+namespace Grammer.IssueTracking.WinForms.Mappers
 {
     class KnihaMap : IEntityTypeConfiguration<Kniha>
     {

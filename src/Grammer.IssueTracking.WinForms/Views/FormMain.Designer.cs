@@ -1,7 +1,10 @@
 ﻿
-namespace GrammerIssueTracking.Views
+using System;
+using System.Windows.Forms;
+
+namespace Grammer.IssueTracking.WinForms.Views
 {
-    partial class FormAdmin
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -34,21 +37,22 @@ namespace GrammerIssueTracking.Views
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(191, 129);
+            this.button1.Location = new System.Drawing.Point(165, 142);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.MouseClick += Button1_MouseClick;
             // 
-            // FormAdmin
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
-            this.Name = "FormAdmin";
-            this.Text = "FormAdmin";
+            this.Name = "FormMain";
+            this.Text = "FormMain";
             this.ResumeLayout(false);
 
         }

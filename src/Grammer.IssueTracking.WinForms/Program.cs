@@ -1,5 +1,4 @@
-using GrammerIssueTracking.Repositories;
-using GrammerIssueTracking.Views;
+using Grammer.IssueTracking.WinForms.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -9,8 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Grammer.IssueTracking.WinForms.Views;
 
-namespace GrammerIssueTracking
+namespace Grammer.IssueTracking.WinForms
 {
     static partial class Program
     {

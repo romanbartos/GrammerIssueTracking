@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrammerIssueTracking.Views
+namespace Grammer.IssueTracking.WinForms.Views
 {
     public partial class FormAdmin : Form
     {

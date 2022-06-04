@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrammerIssueTracking", "GrammerIssueTracking.csproj", "{4D34E5C5-B657-4468-B049-8B409FE815A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammer.IssueTracking.WinForms", "src\Grammer.IssueTracking.WinForms\Grammer.IssueTracking.WinForms.csproj", "{30F32C22-DB20-425A-88CC-A22231B88602}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_SolutionItems", "_SolutionItems", "{D399272A-21AC-4473-ABB9-EABA6D5E897A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		appsettings.json = appsettings.json
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +18,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4D34E5C5-B657-4468-B049-8B409FE815A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D34E5C5-B657-4468-B049-8B409FE815A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D34E5C5-B657-4468-B049-8B409FE815A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D34E5C5-B657-4468-B049-8B409FE815A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F32C22-DB20-425A-88CC-A22231B88602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F32C22-DB20-425A-88CC-A22231B88602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F32C22-DB20-425A-88CC-A22231B88602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F32C22-DB20-425A-88CC-A22231B88602}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

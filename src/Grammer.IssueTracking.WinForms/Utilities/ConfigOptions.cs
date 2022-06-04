@@ -1,4 +1,4 @@
-﻿namespace GrammerIssueTracking.Utilities
+﻿namespace Grammer.IssueTracking.WinForms.Utilities
 {
     public static class ConfigOptions
     {
