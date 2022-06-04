@@ -1,26 +1,23 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Grammer.IssueTracking.Core.Interfaces;
+using Grammer.IssueTracking.Core.Models;
+using Grammer.IssueTracking.Core.Utilities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Grammer.IssueTracking.WinForms.Interfaces;
-using Grammer.IssueTracking.WinForms.Models;
-using Grammer.IssueTracking.WinForms.Utilities;
 
-namespace Grammer.IssueTracking.WinForms.Repositories
+namespace Grammer.IssueTracking.Core.Repositories
 {
     public class KnihaRepository : IGenericRepository<Kniha>
     {
-        private readonly ILogger<KnihaRepository> logger;
-        private readonly string connectionString;
+        private readonly ILogger<KnihaRepository> _logger;
+        private readonly string _connectionString;
 
         public KnihaRepository(ILogger<KnihaRepository> logger, IOptionsMonitor<ConnectionStringOptions> optionsMonitor)
         {
-            this.logger = logger;
-            connectionString = optionsMonitor.CurrentValue.DataAll;
+            _logger = logger;
+            _connectionString = optionsMonitor.CurrentValue.DataAll;
         }
 
         public void Delete(Kniha obj)
@@ -31,14 +28,14 @@ namespace Grammer.IssueTracking.WinForms.Repositories
         public IEnumerable<Kniha> GetAll()
         {
             var optionsBuilder = new DbContextOptionsBuilder<RepositoryContext>();
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlServer(_connectionString);
 
             using (var context = new RepositoryContext(optionsBuilder.Options)) 
             {
                 var knihy = context.Set<Kniha>();
                 foreach (var item in knihy)
                 {
-                    logger.LogInformation($"{item.ID}");
+                    _logger.LogInformation($"{item.KnihaId}");
                     yield return item;
                 }
             }

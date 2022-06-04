@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_SolutionItems", "_Solution
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammer.IssueTracking.Wpf", "src\Grammer.IssueTracking.Wpf\Grammer.IssueTracking.Wpf.csproj", "{E6F513CA-A968-4DB0-8C89-FF946EF7B485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammer.IssueTracking.Core", "src\Grammer.IssueTracking.Core\Grammer.IssueTracking.Core.csproj", "{207A71C1-DAF1-4F56-9F88-0ED292A2C28A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +26,14 @@ Global
 		{30F32C22-DB20-425A-88CC-A22231B88602}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30F32C22-DB20-425A-88CC-A22231B88602}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30F32C22-DB20-425A-88CC-A22231B88602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6F513CA-A968-4DB0-8C89-FF946EF7B485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F513CA-A968-4DB0-8C89-FF946EF7B485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F513CA-A968-4DB0-8C89-FF946EF7B485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F513CA-A968-4DB0-8C89-FF946EF7B485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{207A71C1-DAF1-4F56-9F88-0ED292A2C28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207A71C1-DAF1-4F56-9F88-0ED292A2C28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207A71C1-DAF1-4F56-9F88-0ED292A2C28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207A71C1-DAF1-4F56-9F88-0ED292A2C28A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

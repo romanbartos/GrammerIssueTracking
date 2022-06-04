@@ -1,15 +1,12 @@
-﻿using Microsoft.Extensions.Options;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using Grammer.IssueTracking.WinForms.Interfaces;
-using Grammer.IssueTracking.WinForms.Models;
-using Grammer.IssueTracking.WinForms.Utilities;
+using Grammer.IssueTracking.Core.Interfaces;
+using Grammer.IssueTracking.Core.Models;
+using Grammer.IssueTracking.Core.Utilities;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Options;
 
-namespace Grammer.IssueTracking.WinForms.Repositories
+namespace Grammer.IssueTracking.Core.Repositories
 {
     public class IssueRepository : IGenericRepository<Issue>
     {

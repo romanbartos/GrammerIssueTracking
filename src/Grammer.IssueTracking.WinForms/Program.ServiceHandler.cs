@@ -1,5 +1,5 @@
-﻿using Grammer.IssueTracking.WinForms.Repositories;
-using Grammer.IssueTracking.WinForms.Utilities;
+﻿using Grammer.IssueTracking.Core.Repositories;
+using Grammer.IssueTracking.Core.Utilities;
 using Grammer.IssueTracking.WinForms.Views;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
@@ -57,15 +57,6 @@ namespace Grammer.IssueTracking.WinForms
         {
             services.AddSingleton<IssueRepository>();
             services.AddSingleton<KnihaRepository>();
-            //services.AddSingleton<ActionPlanPointRepository>();
-            //services.AddSingleton<ActionPlanRepository>();
-            //services.AddSingleton<ActionRepository>();
-            //services.AddSingleton<CustomerRepository>();
-            //services.AddSingleton<DepartmentRepository>();
-            //services.AddSingleton<EffectivityControlRepository>();
-            //services.AddSingleton<EmailRepository>();
-            //services.AddSingleton<EmployeeRepository>();
-            //services.AddSingleton<ProjectRepository>();
         }
     }
 }

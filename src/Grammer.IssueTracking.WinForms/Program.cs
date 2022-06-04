@@ -1,4 +1,3 @@
-using Grammer.IssueTracking.WinForms.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

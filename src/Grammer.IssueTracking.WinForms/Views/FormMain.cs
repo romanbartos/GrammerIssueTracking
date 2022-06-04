@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Grammer.IssueTracking.WinForms.Repositories;
+using Grammer.IssueTracking.Core.Repositories;
 
 namespace Grammer.IssueTracking.WinForms.Views
 {

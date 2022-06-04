@@ -36,5 +36,9 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Grammer.IssueTracking.Core\Grammer.IssueTracking.Core.csproj" />
+  </ItemGroup>
   
 </Project>
