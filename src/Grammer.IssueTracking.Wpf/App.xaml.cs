@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Configuration;
 using System.Windows;
+using Grammer.IssueTracking.Core;
 using Grammer.IssueTracking.Core.Repositories;
 using Grammer.IssueTracking.Core.Utilities;
 using Grammer.IssueTracking.Wpf.ViewModels;
 using Grammer.IssueTracking.Wpf.Views;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -17,7 +20,7 @@ namespace Grammer.IssueTracking.Wpf
     // ReSharper disable once RedundantExtendsListEntry
     public partial class App : Application
     {
-        private const string JsonConfigurationFile = "appsettings.json";
+        private const string JsonConfigurationFile = @"Configuration\appsettings.json";
         private static IConfiguration _config;
         private readonly ServiceProvider _serviceProvider;
 
@@ -75,8 +78,8 @@ namespace Grammer.IssueTracking.Wpf
         /// <param name="services">ServiceCollection</param>
         private static void RegisterForms(IServiceCollection services)
         {
-            services.AddSingleton<MainWindow>();
-            services.AddSingleton<BookWindow>();
+            services.AddTransient<MainWindow>();
+            services.AddTransient<BookWindow>();
             // services.AddScoped<FormAdmin>();
         }
 
@@ -93,18 +96,20 @@ namespace Grammer.IssueTracking.Wpf
 
         private static void ConfigureServices(IServiceCollection services)
         {
-            // services.AddDbContext<EmployeeDbContext>(options =>
-            // {
-            //     options.UseSqlite("Data Source = Employee.db");
-            // });
-
             // Initialize Configuration
             RegisterOptions(services);
+            
+            // Initialize DB
+            services.AddDbContext<RepositoryContext>(options =>
+            {
+                options.UseSqlServer(_config.GetConnectionString("DataAll"));
+            });
+            services.AddSingleton<RepositoryContext>();
 
             // Initialize MVVM
-            RegisterForms(services);
             RegisterViewModels(services);
             RegisterRepositories(services);
+            RegisterForms(services);
         }
 
         private static void RegisterViewModels(IServiceCollection services)
