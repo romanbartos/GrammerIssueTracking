@@ -12,12 +12,12 @@ namespace Grammer.IssueTracking.Core.Repositories
     public class KnihaRepository : IGenericRepository<Kniha>
     {
         private readonly ILogger<KnihaRepository> _logger;
-        private readonly string _connectionString;
+        private readonly RepositoryContext _repositoryContext;
 
-        public KnihaRepository(ILogger<KnihaRepository> logger, IOptionsMonitor<ConnectionStringOptions> optionsMonitor)
+        public KnihaRepository(ILogger<KnihaRepository> logger, RepositoryContext repositoryContext)
         {
             _logger = logger;
-            _connectionString = optionsMonitor.CurrentValue.DataAll;
+            _repositoryContext = repositoryContext;
         }
 
         public void Delete(Kniha obj)
@@ -27,17 +27,15 @@ namespace Grammer.IssueTracking.Core.Repositories
 
         public IEnumerable<Kniha> GetAll()
         {
-            var optionsBuilder = new DbContextOptionsBuilder<RepositoryContext>();
-            optionsBuilder.UseSqlServer(_connectionString);
-
-            using (var context = new RepositoryContext(optionsBuilder.Options)) 
+            // Using DB Context
+            using var context = _repositoryContext;
+            
+            // Body
+            var knihy = context.Set<Kniha>();
+            foreach (var item in knihy)
             {
-                var knihy = context.Set<Kniha>();
-                foreach (var item in knihy)
-                {
-                    _logger.LogInformation($"{item.KnihaId}");
-                    yield return item;
-                }
+                _logger.LogInformation($"{item.KnihaId}");
+                yield return item;
             }
         }
 
