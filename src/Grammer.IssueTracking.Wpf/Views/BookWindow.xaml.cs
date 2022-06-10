@@ -1,5 +1,6 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
+using Grammer.IssueTracking.Core;
+using Grammer.IssueTracking.Core.Interfaces;
 using Grammer.IssueTracking.Wpf.ViewModels;
 using Microsoft.Extensions.Logging;
 
@@ -8,27 +9,34 @@ namespace Grammer.IssueTracking.Wpf.Views
     public partial class BookWindow : Window
     {
         private readonly ILogger<BookWindow> _logger;
-        private readonly KnihaViewModel _knihaViewModel;
 
-        public BookWindow(ILogger<BookWindow> logger, KnihaViewModel knihaViewModel)
+        public BookWindow(ILogger<BookWindow> logger)
         {
             _logger = logger;
-            _knihaViewModel = knihaViewModel;
-            
             InitializeComponent();
-            ProvisionDataContext();
+        }
+    }
+
+    public class BookWindowFactory : IWindowFactory
+    {
+        private readonly ILogger<BookWindow> logger;
+        private readonly KnihaViewModel knihaViewModel;
+
+        public BookWindowFactory(ILogger<BookWindow> logger, KnihaViewModel knihaViewModel)
+        {
+            this.logger = logger;
+            this.knihaViewModel = knihaViewModel;
         }
 
-        private void ProvisionDataContext()
+        public void Open()
         {
-            try
+            var view = new BookWindow(logger)
             {
-                DataContext = _knihaViewModel.Books;
-            }
-            catch (Exception)
-            {
-                _logger.LogWarning("Could not retrieve Books from ViewModel");
-            }
+                //Bind
+                DataContext = knihaViewModel
+            };
+
+            view.Show();
         }
     }
 }

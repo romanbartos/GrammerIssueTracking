@@ -78,9 +78,10 @@ namespace Grammer.IssueTracking.Wpf
         /// <param name="services">ServiceCollection</param>
         private static void RegisterForms(IServiceCollection services)
         {
-            services.AddTransient<MainWindow>();
-            services.AddTransient<BookWindow>();
-            // services.AddScoped<FormAdmin>();
+            services.AddSingleton<MainWindow>();
+            
+            // Register factories for new Windows
+            services.AddTransient<BookWindowFactory>();
         }
 
         /// <summary>

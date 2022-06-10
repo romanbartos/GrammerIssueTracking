@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using Grammer.IssueTracking.Wpf.ViewModels;
 
 namespace Grammer.IssueTracking.Wpf.Views
 {
@@ -8,18 +7,18 @@ namespace Grammer.IssueTracking.Wpf.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly BookWindow _bookWindow;
+        private readonly BookWindowFactory _bookWindowFactory;
 
-        public MainWindow(BookWindow bookWindow)
+        public MainWindow(BookWindowFactory bookWindowFactory)
         {
-            _bookWindow = bookWindow;
+            _bookWindowFactory = bookWindowFactory;
 
             InitializeComponent();
         }
 
         private void ButtonClicked(object sender, RoutedEventArgs e)
         {
-            _bookWindow.Show();
+            _bookWindowFactory.Open();
         }
     }
 }
